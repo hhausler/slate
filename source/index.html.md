@@ -1,5 +1,5 @@
 ---
-title: Velocity API Reference
+title: Velocity API Reference test
 
 language_tabs: # must be one of these: https://git.io/vQNgJ
   - shell
@@ -69,6 +69,8 @@ includes:
   - documents/document-manager-put
   - documents/document-manager-get
   - documents/document-manager-get-by-uploadid
+  - documents/document-manager-get-borrower-documents
+  - documents/document-manager-get-document
   - investors/investors-intro
   - investors/investors-get-investorid
   - investors/investors-get
