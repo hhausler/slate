@@ -1,245 +1,157 @@
 ---
-title: API Reference
+title: Velocity API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
+language_tabs: # must be one of these: https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
+  - csharp
   - javascript
+  - python
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
+  - etc/introduction
+  - authentication/authentication
+  - authentication/Password-Change
+  - authentication/Password-Forgot
+  - authentication/Password-Forgot-Confirm
+  - autodebit/autodebit-intro
+  - autodebit/autodebit-get-latest
+  - autodebit/autodebit-get-config-id
+  - autodebit/autodebit-get-config-loanid
+  - borrowers/borrowers-intro
+  - borrowers/borrowers-get-borrowers
+  - borrowers/borrowers-get-by-borrowerid
+  - borrowers/borrowers-post-customdata
+  - borrowers/borrowers-post-customdata-key
+  - borrowers/borrowers-delete-customdata-key
+  - borrowers/borrowers-update-externalreferenceid
+  - borrowers/borrowers-get-ecorr-history
+  - borrowers/borrowers-get-bankprofiles
+  - borrowers/borrowers-get-bankprofile-bankprofileid
+  - borrowers/borrowers-get-address-history
+  - borrowers/borrowers-get-current-address
+  - borrowers/borrowers-get-emailaddresses-current
+  - borrowers/borrowers-get-emailaddresses
+  - borrowers/borrowers-get-current-phonenumbers
+  - borrowers/borrowers-get-phonenumbers
+  - borrowers/borrowers-get-current-bankruptcy
+  - borrowers/borrowers-get-bankruptcy-history
+  - borrowers/borrowers-get-current-disability
+  - borrowers/borrowers-get-disability-history
+  - borrowers/borrowers-get-current-death
+  - borrowers/borrowers-get-death-history
+  - borrowers/borrowers-get-latest-suppression
+  - borrowers/borrowers-get-suppression-history
+  - calculator/calculator-intro
+  - calculator/amortization-post
+  - calculator/amortization-fixedpayment
+  - calculator/amortization-custom
+  - calculator/interest-post
+  - calculator/compoundinterest-post
+  - calculator/calculator-income-based-post
+  - calltracking/calltracking-intro
+  - calltracking/calltracking-get-calls
+  - calltracking/calltracking-get-call-summary
+  - calltracking/calltracking-get-calls-callid
+  - cell-consent/cell-consent-intro
+  - cell-consent/cell-consent-get-consent
+  - cell-consent/cell-consent-get-consent-current
+  - communications/communications-intro
+  - communications/communications-get-latest
+  - communications/communications-get-history
+  - dialer/dialer-intro
+  - dialer/dialer-get-calls
+  # - documents/documents-intro
+  # - documents/documents-post
+  - documents/document-manager-intro
+  - documents/document-manager-post
+  - documents/document-manager-put
+  - documents/document-manager-get
+  - documents/document-manager-get-by-uploadid
+  - investors/investors-intro
+  - investors/investors-get-investorid
+  - investors/investors-get
+  - lenders/lenders-intro
+  - lenders/lenders-get-lender-lenderid
+  - loans/loans-intro
+  - loans/loans-get
+  - loans/loans-get-ids
+  - loans/loans-get-by-loanid
+  - loans/loans-post-custom-data
+  - loans/loans-post-custom-data-key
+  - loans/loans-delete-custom-data-key
+  - loans/loans-externalreferenceid-post
+  - loans/loans-get-payment-schedules
+  - loans/loans-get-payment-schedule-paymentId
+  - loans/loans-get-payment-schedule-last
+  - loans/loans-get-maturity-details
+  - loans/loans-get-loan-programs
+  - loans/loans-get-loan-program-id
+  - loans/loans-get-communication-settings
+  - loanaccounting/loanaccounting-intro
+  - loanaccounting/loanaccounting-get-loan-details
+  - loanaccounting/loanaccounting-get-loan-balances
+  - loanaccounting/loanaccounting-get-billing-cycle-current
+  - loanaccounting/payoff-get-loanid
+  - loanaccounting/payoff-post-loanid
+  - loanaccounting/loanaccounting-get-statements
+  - loanaccounting/loanaccounting-get-statement-id
+  - loanaccounting/loanaccounting-get-latest-statement
+  - loanaccounting/loanaccounting-get-statementdetails-latest
+  - loanaccounting/loanaccounting-statements-get-latest
+  - loanaccounting/loanaccounting-statements-get-history
+  - loanaccounting/loanaccounting-get-statementdetails-id
+  - loanaccounting/loanaccounting-get-paymentdue-latest
+  - loanaccounting/loanaccounting-get-paymentdue-history
+  - loanaccounting/loanaccounting-get-fee-suppression
+  - loanaccounting/loanaccounting-get-fee-suppression-history
+  - loanmodifications/loanmodifications_intro
+  - loanmodifications/loanmodifications-get-settings
+  - loanmodifications/loanmodifications-get-settings-id
+  - loanmodifications/loanmodifications-get-history
+  - loanmodifications/loanmodifications-get-modification-history
+  - onboarding/onboard-intro
+  - onboarding/onboard-post
+  - onboarding/onboard-get-bundles
+  - onboarding/onboard-get-by-onboardingid
+  - onboardingV2/onboardingV2-intro
+  - onboardingV2/onboard-education
+  - onboardingV2/onboard-consumer
+  - onboardingV2/onboardV2-ISA
+  - onboardingV2/onboard-get-bundles-v2
+  - onboardingV2/onboard-get-by-onboardingid-v2
+  - payments/payments-intro
+  - payments/payments-get-ach-latest
+  - payments/payments-get-ach-history
+  - statistics/statistics-intro
+  - statistics/loan-statistics-get
+  - suppression/suppression-intro
+  - suppression/suppression-get-suppression-loanid
+  - term/term-intro
+  - term/term-get-term
+  - transaction/transaction-intro
+  - transaction/transaction-get-transactions
+  - transaction/transaction-get-transactions-id
+  - transaction/transaction-get-balances
+  - transaction/transaction-get-fees
+  - transaction/transaction-get-payments
+  - transaction/transaction-get-payments-last
+  - transaction/transaction-get-interest-accruals
+  - transaction/transaction-get-interest-accruals-last
+  - transaction/transaction-get-disbursements
+  - transaction/transaction-get-disbursements-last
+  - transaction/transaction-get-chargeoff
+  - transaction/transaction-get-interest-caps
+  - transaction/transaction-get-interest-caps-last
+  - transaction/transaction-get-snapshots-snapshotid
+  - transaction/transaction-get-transaction-snapshot-loanid
+  - transaction/transaction-get-transaction-snapshot-loanid-latest
+  - reference/reference-intro
+  - reference/createdby
+  - reference/interest-methods
+  - reference/nested-arrays
+  - etc/errors
 
 search: true
-
-code_clipboard: true
-
-meta:
-  - name: description
-    content: Documentation for the Kittn API
 ---
-
-# Introduction
-
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
