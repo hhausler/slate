@@ -124,32 +124,32 @@ Use the `/documents/borrower-documents/{borrowerId}` read-only endpoint to view 
 
 `VERB https://api.nelnet.io/`
 
-| Parameter  | Required | Type | Description     |
-| ---------- | -------- | ---- | --------------- |
-| borrowerId | true     | guid | The Borrower ID |
+| Parameter  | Required | Type | Description      |
+| ---------- | -------- | ---- | ---------------- |
+| borrowerId | true     | GUID | The Borrower ID. |
 
 ### HTTP Response
 
-| Field Name     | Type    | Description                                       |
-| -------------- | ------- | ------------------------------------------------- |
-| documentId     | string  | Guid identifying document                         |
-| documentDate   | string  | Date document was stored                          |
-| contentSize    | string  | Byte size of document                             |
-| mimeType       | string  | Mime type of document                             |
-| documentCode   | string  | Document code of document                         |
-| letterType     | string  | Letter type of document                           |
-| fileName       | string  | File name of document                             |
-| borrowerId     | string  | Borrower Id of document                           |
-| documentType   | string  | Document type of document                         |
-| documentTitle  | string  | Title of document                                 |
-| firstName      | string  | First Name of borrower                            |
-| lastName       | string  | Last Name of borrower                             |
-| lender         | string  | Lender of document                                |
-| lenderId       | string  | Lender ID of document                             |
-| loanExternalId | string  | External reference value of document              |
-| loanId         | string  | Loan ID of document                               |
-| loanNumber     | string  | Loan number of document                           |
-| source         | string  | Source location of document                       |
-| ssn            | string  | SSN of borrower                                   |
-| read           | boolean | Determines if document has been read by borrower  |
-| hidden         | boolean | Determines if document should be returned in list |
+| Field Name     | Type    | Description                                        |
+| -------------- | ------- | -------------------------------------------------- |
+| documentId     | string  | GUID identifying document.                         |
+| documentDate   | string  | Date document was stored.                          |
+| contentSize    | string  | Byte size of document.                             |
+| mimeType       | string  | Mime type of document.                             |
+| documentCode   | string  | Document code of document.                         |
+| letterType     | string  | Letter type of document.                           |
+| fileName       | string  | File name of document.                             |
+| borrowerId     | string  | Borrower Id of document.                           |
+| documentType   | string  | Document type of document.                         |
+| documentTitle  | string  | Title of document.                                 |
+| firstName      | string  | First Name of borrower.                            |
+| lastName       | string  | Last Name of borrower.                             |
+| lender         | string  | Lender of document.                                |
+| lenderId       | string  | Lender ID of document.                             |
+| loanExternalId | string  | External reference value of document.              |
+| loanId         | string  | Loan ID of document.                               |
+| loanNumber     | string  | Loan number of document.                           |
+| source         | string  | Source location of document.                       |
+| ssn            | string  | SSN of borrower.                                   |
+| read           | boolean | Determines if document has been read by borrower.  |
+| hidden         | boolean | Determines if document should be returned in list. |
